@@ -18,12 +18,12 @@ async function instantiate(module, imports = {}) {
   const memory = exports.memory || imports.env.memory;
   const adaptedExports = Object.setPrototypeOf({
     allocateString(str) {
-      // as/allocateString(~lib/string/String) => ~lib/staticarray/StaticArray<u16>
+      // src/as/as/allocateString(~lib/string/String) => ~lib/staticarray/StaticArray<u16>
       str = __lowerString(str) || __notnull();
       return __liftStaticArray(__getU16, 1, exports.allocateString(str) >>> 0);
     },
     levenshtein(a, b, aLen, bLen) {
-      // as/levenshtein(~lib/staticarray/StaticArray<u16>, ~lib/staticarray/StaticArray<u16>, i32, i32) => f64
+      // src/as/as/levenshtein(~lib/staticarray/StaticArray<u16>, ~lib/staticarray/StaticArray<u16>, i32, i32) => f64
       a = __retain(__lowerStaticArray(__setU16, 4, 1, a, Uint16Array) || __notnull());
       b = __lowerStaticArray(__setU16, 4, 1, b, Uint16Array) || __notnull();
       try {

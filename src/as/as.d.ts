@@ -1,13 +1,13 @@
 /** Exported memory */
 export declare const memory: WebAssembly.Memory;
 /**
- * as/allocateString
+ * src/as/as/allocateString
  * @param str `~lib/string/String`
  * @returns `~lib/staticarray/StaticArray<u16>`
  */
 export declare function allocateString(str: string): ArrayLike<number>;
 /**
- * as/levenshtein
+ * src/as/as/levenshtein
  * @param a `~lib/staticarray/StaticArray<u16>`
  * @param b `~lib/staticarray/StaticArray<u16>`
  * @param aLen `i32`

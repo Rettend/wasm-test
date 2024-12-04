@@ -48,8 +48,8 @@
  (export "__collect" (func $~lib/rt/itcms/__collect))
  (export "__rtti_base" (global $~lib/rt/__rtti_base))
  (export "memory" (memory $0))
- (export "allocateString" (func $export:as/allocateString))
- (export "levenshtein" (func $export:as/levenshtein))
+ (export "allocateString" (func $export:src/as/as/allocateString))
+ (export "levenshtein" (func $export:src/as/as/levenshtein))
  (start $~start)
  (func $~lib/rt/itcms/visitRoots
   (local $0 i32)
@@ -1923,7 +1923,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $as/levenshtein (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result f64)
+ (func $src/as/as/levenshtein (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result f64)
   (local $4 i32)
   (local $5 i32)
   (local $6 f64)
@@ -2224,7 +2224,7 @@
   global.set $~lib/memory/__stack_pointer
   local.get $0
  )
- (func $export:as/allocateString (param $0 i32) (result i32)
+ (func $export:src/as/as/allocateString (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -2435,7 +2435,7 @@
   call $~lib/builtins/abort
   unreachable
  )
- (func $export:as/levenshtein (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result f64)
+ (func $export:src/as/as/levenshtein (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result f64)
   (local $4 f64)
   global.get $~lib/memory/__stack_pointer
   i32.const 8
@@ -2462,7 +2462,7 @@
   local.get $1
   local.get $2
   local.get $3
-  call $as/levenshtein
+  call $src/as/as/levenshtein
   local.set $4
   global.get $~lib/memory/__stack_pointer
   i32.const 8
