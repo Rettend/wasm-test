@@ -1,0 +1,2 @@
+# wasm-test
+ AssemblyScript testing
